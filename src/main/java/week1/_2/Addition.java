@@ -1,13 +1,18 @@
-package week1._2;
+import java.util.Scanner;
 
 public class Addition {
-    Addition(int a, int b) {
-        System.out.println(a + b);
+    int sum;
+    Addition (int a, int b){
+        sum =  a + b;
     }
-    Addition(int a, int b, int c) {
-        System.out.println(a + b + c);
+    Addition (int a, int b, int c) {
+        sum = a + b + c;
     }
-    Addition(int a, int b, int c, int d) {
-        System.out.println(a + b + c + d);
+    Addition (int a, int b, int c, int d) {
+        sum = a + b + c + d;
+    }
+    
+    void display(){
+        System.out.println("The sum is " + sum);
     }
 }
