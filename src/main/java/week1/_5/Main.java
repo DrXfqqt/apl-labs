@@ -1,56 +1,71 @@
-package week1._5;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int a = 3, b = 6, c = 5, d = 1;
-        System.out.printf("Min of %d, %d, %d, %d using ternary operators: %d", a, b, c, d, min0(a, b, c, d));
-        System.out.printf("Max of %d, %d, %d, %d using ternary operators: %d", a, b, c, d, max0(a, b, c, d));
-        System.out.printf("Min of %d, %d, %d, %d using if-else statements: %d", a, b, c, d, min1(a, b, c, d));
-        System.out.printf("Max of %d, %d, %d, %d using if-else statements: %d", a, b, c, d, max1(a, b, c, d));
-    }
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter 4 numbers: ");
+        int a = input.nextInt();
+        int b = input.nextInt();
+        int c = input.nextInt();
+        int d = input.nextInt();
+        int max = 0, min = 0;
 
-    static int min0 (int a, int b, int c, int d) {
-        int min = a;
-        min = min < b ? min : b;
-        min = min < c ? min : c;
-        min = min < d ? min : d;
-        return min;
-    }
-    static int max0 (int a, int b, int c, int d) {
-        int max = a;
-        max = max > b ? max : b;
-        max = max > c ? max : c;
-        max = max > d ? max : d;
-        return max;
-    }
-    static int min1(int a, int b, int c, int d) {
-        if (a <= b && a <= c && a <= d) {
-            return a;
-        } else {
-            if (b <= a && b <= c && b <= d) {
-                return b;
-            } else {
-                if (c <= a && c <= b && c <= d) {
-                    return c;
-                } else {
-                    return d;
-                }
+        System.out.println("Using if-else statements: ");        
+//maximum
+        if(a>b){
+            if(a>c){
+                if(a>d){max = a;}
+                else{max = d;}
+            }
+            else{
+                if(c>d){max = c;}
+                else{max = d;}
             }
         }
-    }
-    static int max1(int a, int b, int c, int d) {
-        if (a >= b && a >= c && a >= d) {
-            return a;
-        } else {
-            if (b >= a && b >= c && b >= d) {
-                return b;
-            } else {
-                if (c >= a && c >= b && c >= d) {
-                    return c;
-                } else {
-                    return d;
-                }
+        else{
+            if(b>c){
+                if(b>d){max = b;}
+                else{max = d;}
+            }
+            else{
+                if(c>d){max = c;}
+                else{max = d;}
             }
         }
+//minimum
+        if(a<b){
+            if(a<c){
+                if(a<d){min = a;}
+                else{min = d;}
+            }
+            else{
+                if(c<d){min = c;}
+                else{min = d;}
+            }
+        }
+        else{
+            if(b<c){
+                if(b<d){min = b;}
+                else{min = d;}
+            }
+            else{
+                if(c<d){min = c;}
+                else{min = d;}
+            }
+        }
+        System.out.println("Maximum number is " + max);
+        System.out.println("Minimum number is " + min);
+        System.out.println();
+
+        max = min = 0;
+        System.out.println("Using ternary operator: ");
+//maximum
+        max = ((a>b)?((a>c)?((a>d)?a:d):((c>d)?c:d)):((b>c)?((b>d)?b:d):((c>d)?c:d)));
+//minimum
+        min = ((a<b)?((a<c)?((a<d)?a:d):((c<d)?c:d)):((b<c)?((b<d)?b:d):((c<d)?c:d)));
+        System.out.println("Maximum number is " + max);
+        System.out.println("Minimum number is " + min);
+        
+        input.close();
     }
 }
