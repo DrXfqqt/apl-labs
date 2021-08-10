@@ -1,43 +1,62 @@
-package week1._1;
+import java.util.Scanner;
 
-public class Main {
-    static int add(int a, int b) {
-        return a + b;
-    }
-    static int sub(int a, int b) {
-        return a - b;
-    }
-    static int mult(int a, int b) {
-        return a * b;
-    }
-    static double div(double a, double b) {
-        return a / b;
-    }
-    static int mod(int a, int b) {
-        return a % b;
-    }
-
-    static boolean and(boolean a, boolean b) {
-        return a && b;
-    }
-    static boolean or(boolean a, boolean b) {
-        return a || b;
-    }
-    static boolean not(boolean a) {
-        return !a;
-    }
-    
+public class cal {
     public static void main(String[] args) {
-        int a = 13, b = 4;
-        System.out.println(a + " + " + b + " = " + add(a, b));
-        System.out.println(a + " - " + b + " = " + sub(a, b));
-        System.out.println(a + " * " + b + " = " + mult(a, b));
-        System.out.println(a + " / " + b + " = " + div(a, b));
-        System.out.println(a + " % " + b + " = " + mod(a, b));
-        
-        boolean x = false, y = true;
-        System.out.println(x + " and " + y + " = " + and(x, y));
-        System.out.println(x + " or " + y + " = " + or(x, y));
-        System.out.println("not " + x + " = " + not(x));
+        Scanner input = new Scanner(System.in);
+        System.out.println("############\t CALCULATOR \t############");
+        System.out.println();
+        char cont = 'y';
+        int a, b, choice;
+        while(cont == 'y'){
+            System.out.println("Press 1 for addition.");
+            System.out.println("Press 2 for subtraction.");
+            System.out.println("Press 3 for multiplication.");
+            System.out.println("Press 4 for division.");
+            System.out.println("Press 5 for modulo.");
+            System.out.println("Press 6 for bitwise AND.");
+            System.out.println("Press 7 for bitwise OR.");
+            System.out.println("Press 8 for bitwise NOT.");
+            choice = input.nextInt();
+
+            if(choice < 8){
+                System.out.print("Enter the two numbers: ");
+                a = input.nextInt();
+                b = input.nextInt();
+                
+                switch(choice){
+                    case 1:
+                        System.out.println("Sum is " + (a + b));
+                        break;
+                    case 2:
+                        System.out.println("Difference is " + (a - b));
+                        break;
+                    case 3:
+                        System.out.println("Product is " + (a*b));
+                        break;
+                    case 4:
+                        System.out.println("Quotient is " + (double)((double)a/b));
+                        break;
+                    case 5:
+                        System.out.println("Modulo is " + (a%b));
+                        break;
+                    case 6:
+                        System.out.println("And is " + (a&b));
+                        break;
+                    case 7:
+                        System.out.println("OR is " + (a|b));
+                        break;
+                }
+            }
+            else{
+                System.out.println("Enter a number: ");
+                a = input.nextInt();
+                System.out.println("NOT of the number is " + (~a));
+            }
+
+            System.out.print("To continue press 'y' else press 'n': ");
+            cont = input.next().charAt(0);
+        }
+        input.close();
     }
 }
+
