@@ -1,48 +1,39 @@
-
 import java.util.Scanner;
-
-public class Main{
-    public int height;
-    public int depth;
-    public int lengt;
-    box(int a,int b,int c)
-    {
-        height=b;
-
-        depth=c;
-        lengt=a;
-        System.out.println("volume of box is : "+ (a*b*c));
-
-    }
-    box(int a,int b)
-    {
-        height=b;
-        lengt=a;
-        System.out.println("area of rectangle is "+(a*b));
-    }
-    box(int a)
-    {
-        System.out.println("area of circle is : "+3.14*a*a);
-    }
+class Cuboid{
+    int length, width, height;
+    void set_length(int l){
+        length = l;
 }
-public class problem3_a {
+void set_width(int w){
+width = w; }
+    void set_height(int h){
+        height = h;
+}
+void volume(){
+System.out.println("The volume of given cuboid is: " + (length*width*height));
+} }
+class circle{
+    int radius;
+    void set_radius(int r){
+        radius = r;
+}
 
-
-    public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int i=0;
-        while(i<3){
-
-            System.out.println("Enter dimensions of box "+i);
-            int l,b,h;
-            l= sc.nextInt();
-            b= sc.nextInt();
-            h= sc.nextInt();
-            box b1=new box(l,b,h);
-
-            i++;
+void area(){
+        System.out.println("The Area of given circle is: " +
+        3.14*radius*radius); }
         }
-
-
-    }
-}
+        class rectangle{
+            int length;
+        int width;
+            void set_rlength(int l){
+                length = l;
+        }
+        void set_rwidth(int w){
+        width = w; }
+        void rarea(){
+        System.out.println("The area of the given rectangle is: " +
+        length*width); }
+        }
+        public class Main{
+            public static void main(String args[]){
+        } }
