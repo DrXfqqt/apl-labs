@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-class box{
+public class Main{
     public int height;
     public int depth;
     public int lengt;
